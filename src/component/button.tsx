@@ -1,8 +1,13 @@
 import React from 'react';
 
-const Button = ({ children }) => {
+interface ButtonProps {
+    children: string;
+    onClick: ()=> void;
+}
+
+const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
     return (
-        <button className = "rounded-xl border-[3px] border-black px-4 my-2 w-full">
+        <button className = "rounded-xl border-[3px] border-black px-4 my-2 w-full" onClick = {onClick}>
             {children}
         </button>
     );
