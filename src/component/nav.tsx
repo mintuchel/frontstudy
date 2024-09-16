@@ -3,8 +3,8 @@ import Button from './button';
 
 const Nav = ({onNavClick}) => {
     return (
-                <aside className="w-1/6 bg-blue-300 p-5">
-                    <h2 className="font-bold text-lg text-black mb-4 flex justify-center">nav</h2>
+                <aside className="w-1/6 bg-blue-500 p-5">
+                    <h2 className="font-bold text-lg text-black mb-4 flex justify-center">여기가 Nav입니다</h2>
                     <ul className="list-disc pl-5">
                         <Button onClick = {() => onNavClick('Chelsea')}>Chelsea</Button>
                         <Button onClick = {() => onNavClick('ManCity')}>ManCity</Button>

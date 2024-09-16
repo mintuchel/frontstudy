@@ -1,13 +1,13 @@
 import React from 'react';
 
-// Define the props interface
+// 전달받을 클래스 정의
 interface PlayerProps {
     imgurl: string,
     name: string;
     price: string;
 }
 
-// Use the StockProps interface for the Box component
+// PlayerProps 라는 구조체를 전달받는다는 것을 React.FC 사용해서 정의해야함
 const Box: React.FC<PlayerProps> = ({ imgurl, name, price }) => {
     return (
         <div className="rounded-2xl overflow-hidden border-[3px] border-black">
