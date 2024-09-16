@@ -14,14 +14,14 @@ const App = () => {
                 <main className="w-5/6">
                 <section className="p-5 border-[3px] border-black">
                     <div className="grid grid-cols-4 gap-5">
-                        <Box/>
-                        <Box/>
-                        <Box/>
-                        <Box/>
-                        <Box/>
-                        <Box/>
-                        <Box/>
-                        <Box/>
+                    <Box name="에코프로" price="₩100,000" />
+                            <Box name="삼성전자" price="₩80,000" />
+                            <Box name="카카오" price="₩150,000" />
+                            <Box name="네이버" price="₩120,000" />
+                            <Box name="에코프로" price="₩100,000" />
+                            <Box name="삼성전자" price="₩80,000" />
+                            <Box name="카카오" price="₩150,000" />
+                            <Box name="네이버" price="₩120,000" />
                     </div>
                 </section>
                 </main>

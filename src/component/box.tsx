@@ -1,6 +1,13 @@
 import React from 'react';
 
-const Box = () => {
+// Define the props interface
+interface StockProps {
+    name: string;
+    price: string;
+}
+
+// Use the StockProps interface for the Box component
+const Box: React.FC<StockProps> = ({ name, price }) => {
     return (
         <div className="rounded-2xl overflow-hidden border-[3px] border-black">
             <img
@@ -10,11 +17,11 @@ const Box = () => {
             <div className="p-4 bg-white">
                 <header className="mb-2">
                     <h3 className="font-bold text-ellipsis whitespace-nowrap overflow-hidden">
-                        css 1줄 없이 예쁜 사이트 만들기
+                        {name}
                     </h3>
                 </header>
                 <p className="text-gray-600 text-sm">
-                    안녕하세요! 오늘은 새로운 라이브러리를 소개해드릴까합니다!
+                    {price}
                 </p>
             </div>
         </div>
