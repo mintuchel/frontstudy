@@ -10,6 +10,7 @@ const App = () => {
         <div className="min-h-screen bg-gray-100">
             <Header />
             <Section />
+            {/*<NavBar />*/}
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/players" element={<Players />} />
