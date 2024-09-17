@@ -1,6 +1,11 @@
+import { Link } from 'react-router-dom';
+
 const Home = () => {
     return (
-        <h1>This is Home</h1>
+        <div className="w-full">
+            <h1>This is Home</h1>
+            <Link to="/players">Ones To Watch</Link>
+        </div>
     )
 };
 

@@ -47,7 +47,7 @@ const Players = () => {
 
     return (
         <div className="container max-w-full flex">
-            {/* passing the handleNavClick callback-function to Nav Component */}
+            {/* Nav에게 handleNavClick 콜백함수 전달 */}
             <Nav onNavClick={handleNavClick} />
             <main className="w-5/6">
                 <section className="p-5 border-[3px] border-black">
