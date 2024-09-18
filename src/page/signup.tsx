@@ -1,11 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
+const backgrounds = [
+    'https://mrwallpaper.com/images/hd/uefa-champions-league-star-football-logo-8dv90jbvwwhzp9c0.jpg',
+    'https://i.redd.it/b10brark3g031.png',
+    'https://cdn.wallpapersafari.com/65/46/EeRgv2.jpg',
+];
 
 const SignUp = () => {
+
+    // setBackground 함수가 호출되면 index 렌더링해라
+    const [index, updateBackgroundIndex] = useState(0);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            updateBackgroundIndex(prevIndex => (prevIndex + 1) % backgrounds.length);
+        }, 3000);
+
+        return () => clearInterval(intervalId);
+    }, []);
+
     return (
         <section
             className="max-w-full h-[78.2vh] flex justify-center items-center overflow-hidden rounded-lg bg-cover bg-no-repeat"
             style={{
-                backgroundImage: "url('https://mrwallpaper.com/images/hd/uefa-champions-league-star-football-logo-8dv90jbvwwhzp9c0.jpg')"
+                backgroundImage: `url(${backgrounds[index]})`
             }}
         >
             <main className="flex p-4 justify-center border-[5px] border-white rounded-2xl">
