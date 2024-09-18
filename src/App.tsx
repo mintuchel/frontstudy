@@ -4,6 +4,8 @@ import Footer from "./component/footer";
 import { Routes, Route } from "react-router-dom";
 import Players from "./page/players";
 import Home from "./page/home";
+import Login from "./page/login";
+import SignUp from "./page/signup";
 
 const App = () => {
     return (
@@ -14,6 +16,8 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/players" element={<Players />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<SignUp />} />
             </Routes>
             <Footer />
         </div>

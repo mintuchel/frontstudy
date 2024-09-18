@@ -12,6 +12,10 @@ const Hamburger = () => {
         setIsOpen(!isOpen);
     };
 
+    const handleLinkClick = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <div className="relative">
             <button onClick={handleHamburger}>
@@ -21,14 +25,18 @@ const Hamburger = () => {
                 <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-gray-300 shadow-lg">
                     <ul className="list-none p-0 m-0">
                         <li className="p-2 hover:bg-gray-200">
-                            <Link to="/" className="text-black">Home</Link>
+                            <Link to="/" className="text-black" onClick={handleLinkClick}>Home</Link>
                         </li>
                         <li className="p-2 hover:bg-gray-200">
-                            <Link to="/players" className="text-black">Players</Link>
+                            <Link to="/players" className="text-black" onClick={handleLinkClick}>Players</Link>
                         </li>
                         <li className="p-2 hover:bg-gray-200">
-                            <Link to="/mypage" className="text-black">MyPage</Link>
+                            <Link to="/login" className="text-black" onClick={handleLinkClick}>Login</Link>
                         </li>
+                        <li className="p-2 hover:bg-gray-200">
+                            <Link to="/signup" className="text-black" onClick={handleLinkClick}>SignUp</Link>
+                        </li>
+
                     </ul>
                 </div>
             )}
