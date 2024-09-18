@@ -21,10 +21,7 @@ const Players = () => {
                 { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p248857.png", name: "madueke", price: "$45m", position: "RW" },
                 { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p486672.png", name: "moises caicedo", price: "$117m", position: "CDM" },
                 { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p215413.png", name: "dewsbury-hall", price: "$43m", position: "CM" },
-                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p247632.png", name: "pedro neto", price: "$69m", position: "CM" },
-                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p248857.png", name: "madueke", price: "$45m", position: "CM" },
-                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p486672.png", name: "moises caicedo", price: "$117m", position: "CM" },
-                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p215413.png", name: "dewsbury-hall", price: "$43m", position: "CM" },
+                { imgurl: "https://media.futbolfantasy.com/thumb/400x400/v202408200059/uploads/images/jugadores/ficha/8871.png", name: "mudryk", price: "$55m", position: "LW" },
             ]);
         } else if (category === 'ManCity') {
             setBoxData([
@@ -46,6 +43,30 @@ const Players = () => {
                 { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p184754.png", name: "hwang", price: "$38m", position: "RW" },
                 { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p430871.png", name: "matheus cunha", price: "$55m", position: "LM" },
                 { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p151086.png", name: "mario lemina", price: "$21m", position: "CM" },
+            ]);
+        } else if (category === 'Liverpool') {
+            setBoxData([
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p447203.png", name: "darwin nunez", price: "$110m", position: "ST" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p97032.png", name: "van dijk", price: "$48m", position: "CB" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p424876.png", name: "dominik szoboszlai", price: "$110m", position: "CM" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p243016.png", name: "macallister", price: "$96m", position: "CM" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p243298.png", name: "cody gakpo", price: "$76m", position: "LW" },
+            ]);
+        } else if (category === 'Brighton') {
+            setBoxData([
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p451340.png", name: "mitoma", price: "$69m", position: "LW" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p487117.png", name: "ferguson", price: "$76m", position: "ST" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p474120.png", name: "enciso", price: "$37m", position: "CAM" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p204214.png", name: "estupinan", price: "$48m", position: "LWB" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p535818.png", name: "adingra", price: "$39m", position: "LW" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p109345.png", name: "solly march", price: "$32m", position: "RW" },
+            ]);
+        } else if (category === 'AstonVilla') {
+            setBoxData([
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p449871.png", name: "amadu onana", price: "$76m", position: "CDM" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p178301.png", name: "ollie watkins", price: "$96m", position: "ST" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p101188.png", name: "digne", price: "$22m", position: "LB" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p122806.png", name: "john mcginn", price: "$34m", position: "CM" },
             ]);
         }
     };
