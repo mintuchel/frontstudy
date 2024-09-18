@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
-import Container from 'postcss/lib/container';
 
 const Home = () => {
 
@@ -10,9 +8,9 @@ const Home = () => {
     const leftClicked = () => setImage((imgIdx + 3) % 4)
 
     const imageList: string[] = [
+        "https://wallpapers.com/images/featured/premier-league-86d2ur0b5ryesbe7.jpg",
         "https://e0.365dm.com/24/07/2048x1152/skysports-premier-league-season_6629191.jpg?20240717140210",
         "https://www.sportcal.com/wp-content/uploads/sites/32/2024/02/main65c65516af3e3.jpg",
-        "https://wallpapers.com/images/featured/premier-league-86d2ur0b5ryesbe7.jpg",
         "https://e0.365dm.com/19/07/2048x1152/skysports-premier-league-fixtures_4709655.jpg?20190704125627",
     ]
 
