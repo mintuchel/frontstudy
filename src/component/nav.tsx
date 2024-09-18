@@ -13,10 +13,13 @@ const Nav: React.FC<NavProps> = ({ onNavClick }) => {
         <aside className="w-1/6 bg-blue-500 p-5">
             <h2 className="font-bold text-lg text-black mb-4 flex justify-center">여기가 Nav입니다</h2>
             <ul className="list-disc pl-5">
-                <Button onClick={() => onNavClick('Chelsea')}>Chelsea</Button>
                 <Button onClick={() => onNavClick('ManCity')}>ManCity</Button>
+                <Button onClick={() => onNavClick('AstonVilla')}>AstonVilla</Button>
+                <Button onClick={() => onNavClick('Chelsea')}>Chelsea</Button>
                 <Button onClick={() => onNavClick('NewCastle')}>NewCastle</Button>
                 <Button onClick={() => onNavClick('Wolverhampton')}>Wolverhampton</Button>
+                <Button onClick={() => onNavClick('Liverpool')}>Liverpool</Button>
+                <Button onClick={() => onNavClick('Brighton')}>Brighton</Button>
             </ul>
         </aside>
     );
