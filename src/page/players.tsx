@@ -20,6 +20,10 @@ const Players = () => {
                 { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p248857.png", name: "madueke", price: "$45m" },
                 { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p486672.png", name: "moises caicedo", price: "$117m" },
                 { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p215413.png", name: "dewsbury-hall", price: "$43m" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p247632.png", name: "pedro neto", price: "$69m" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p248857.png", name: "madueke", price: "$45m" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p486672.png", name: "moises caicedo", price: "$117m" },
+                { imgurl: "https://resources.premierleague.com/premierleague/photos/players/250x250/p215413.png", name: "dewsbury-hall", price: "$43m" },
             ]);
         } else if (category === 'ManCity') {
             setBoxData([
@@ -46,17 +50,14 @@ const Players = () => {
     };
 
     return (
-        <div className="container max-w-full flex">
+        <div className="max-w-full h-[78.2vh] flex">
             {/* Nav에게 handleNavClick 콜백함수 전달 */}
             <Nav onNavClick={handleNavClick} />
-            <main className="w-5/6">
-                <section className="p-5 border-[3px] border-black">
-                    <div className="grid grid-cols-4 gap-5">
-                        {boxData.map((box, index) => (
-                            <Box key={index} imgurl={box.imgurl} name={box.name} price={box.price} />
-                        ))}
-                    </div>
-                </section>
+            <main className="w-5/6 grid grid-cols-4 grid-rows-2 gap-5">
+
+                {boxData.map((box, index) => (
+                    <Box key={index} imgurl={box.imgurl} name={box.name} price={box.price} />
+                ))}
             </main>
         </div>
     )
