@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 
 const SignUp = () => {
     return (
-        <section className="max-w-full h-[78.2vh] flex justify-center items-center bg-black">
-            <main className="flex p-4 justify-center border-[3px] border-white rounded-2xl">
+        <section
+            className="max-w-full h-[78.2vh] flex justify-center items-center overflow-hidden rounded-lg bg-cover bg-no-repeat"
+            style={{
+                backgroundImage: "url('https://mrwallpaper.com/images/hd/uefa-champions-league-star-football-logo-8dv90jbvwwhzp9c0.jpg')"
+            }}
+        >
+            <main className="flex p-4 justify-center border-[5px] border-white rounded-2xl">
                 <form className="space-y-4">
                     <div className="flex items-center space-x-4">
                         <input
