@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from './button';
 
 // 콜백함수 전달할때도 Props 정의해주기
@@ -11,9 +11,9 @@ interface NavProps {
 const Nav: React.FC<NavProps> = ({ onNavClick }) => {
 
     return (
-        <aside className="w-1/6 bg-blue-500 p-5">
+        <aside className="w-[10vw] bg-blue-500 p-5">
             <h2 className="font-bold text-lg text-black mb-4 flex justify-center">여기가 Nav입니다</h2>
-            <ul className="list-disc pl-5">
+            <ul className="list-disc mb-4">
                 <Button onClick={() => onNavClick('ManCity')}>ManCity</Button>
                 <Button onClick={() => onNavClick('AstonVilla')}>AstonVilla</Button>
                 <Button onClick={() => onNavClick('Chelsea')}>Chelsea</Button>

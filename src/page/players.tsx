@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import Nav from '../component/nav';
 import Card from '../component/card';
-import MyTeam from '../component/myteam';
 
 interface CardProps {
     imgurl: string;
@@ -15,21 +14,26 @@ const Players = () => {
 
     // setMyTeam이 호출되면 myTeam을 업데이트하고 렌더링해라
     const [myTeam, setMyTeam] = useState<CardProps[]>([]);
+    // updateBudget이 호출되면 myBudget을 업데이트하고 렌더링해라
+    const [myBudget, updateBudget] = useState(300);
 
     // CardProp이라는 객체를 받음
-    // React에는 list.add 같은게 없다. 왜 없는지는 의문이다
     const addToMyTeam = (player: CardProps) => {
-        // 이미 추가된 플레이어는 중복으로 추가되지 않도록 처리. 새 배열 생성해서 업데이트
-        if (!myTeam.some((p) => p.name === player.name)) {
+        const playerPrice = parseInt(player.price.substring(1));
+        // 중복되지 않고 구매가능한 선수면
+        if (!myTeam.some((p) => p.name === player.name) && myBudget - playerPrice > 0) {
             setMyTeam((prevTeam) => [...prevTeam, player]);
+            updateBudget(myBudget - playerPrice)
         }
     };
 
     const deleteFromMyTeam = (player: CardProps) => {
         // 주어진 player의 이름과 일치하지 않는 플레이어들로 새로운 배열을 생성하여 업데이트
         setMyTeam((prevTeam) => prevTeam.filter((p) => p.name !== player.name));
-    };
 
+        const playerPrice = parseInt(player.price.substring(1));
+        updateBudget(myBudget + playerPrice)
+    };
 
     // setBoxData가 호출되면 boxData가 렌더링 되어야하니 업데이트해라
     const [cardData, setCardData] = useState([
@@ -116,18 +120,23 @@ const Players = () => {
                 ))}
             </section>
 
-            <section className="flex-1 grid grid-cols-4 grid-rows-2 gap-5 mx-2">
-                {myTeam.map((card, index) => (
-                    <Card
-                        key={index}
-                        imgurl={card.imgurl}
-                        name={card.name}
-                        price={card.price}
-                        position={card.position}
-                        onAddToMyTeam={() => deleteFromMyTeam(card)}
-                    />
-                ))}
-            </section>
+            <div className="flex-1">
+                <section className="flex-1 grid grid-cols-5 grid-rows-2 gap-5 bg-blue-600 h-5/6">
+                    {myTeam.map((card) => (
+                        <Card
+                            key={card.name}
+                            imgurl={card.imgurl}
+                            name={card.name}
+                            price={card.price}
+                            position={card.position}
+                            onAddToMyTeam={() => deleteFromMyTeam(card)}
+                        />
+                    ))}
+                </section>
+                <div className="flex bottom-0 bg-gray-300 h-1/6 justify-end">
+                    <h1 className="h-full border-[3px] border-red-600 text-7xl font-bold">${myBudget}</h1>
+                </div>
+            </div>
         </div>
     )
 };
