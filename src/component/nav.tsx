@@ -9,6 +9,7 @@ interface NavProps {
 
 // NavProps를 받는데 그 중 onNavClick이라는 prop만 가져오기
 const Nav: React.FC<NavProps> = ({ onNavClick }) => {
+
     return (
         <aside className="w-1/6 bg-blue-500 p-5">
             <h2 className="font-bold text-lg text-black mb-4 flex justify-center">여기가 Nav입니다</h2>

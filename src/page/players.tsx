@@ -4,7 +4,32 @@ import Nav from '../component/nav';
 import Card from '../component/card';
 import MyTeam from '../component/myteam';
 
+interface CardProps {
+    imgurl: string;
+    name: string;
+    price: string;
+    position: string;
+}
+
 const Players = () => {
+
+    // setMyTeam이 호출되면 myTeam을 업데이트하고 렌더링해라
+    const [myTeam, setMyTeam] = useState<CardProps[]>([]);
+
+    // CardProp이라는 객체를 받음
+    // React에는 list.add 같은게 없다. 왜 없는지는 의문이다
+    const addToMyTeam = (player: CardProps) => {
+        // 이미 추가된 플레이어는 중복으로 추가되지 않도록 처리. 새 배열 생성해서 업데이트
+        if (!myTeam.some((p) => p.name === player.name)) {
+            setMyTeam((prevTeam) => [...prevTeam, player]);
+        }
+    };
+
+    const deleteFromMyTeam = (player: CardProps) => {
+        // 주어진 player의 이름과 일치하지 않는 플레이어들로 새로운 배열을 생성하여 업데이트
+        setMyTeam((prevTeam) => prevTeam.filter((p) => p.name !== player.name));
+    };
+
 
     // setBoxData가 호출되면 boxData가 렌더링 되어야하니 업데이트해라
     const [cardData, setCardData] = useState([
@@ -78,14 +103,31 @@ const Players = () => {
             {/* Nav에게 handleNavClick 콜백함수 전달 */}
             <Nav onNavClick={handleNavClick} />
 
-            <main className="w-5/6 flex-1 grid grid-cols-4 grid-rows-2 gap-5">
+            <section className="flex-1 grid grid-cols-4 grid-rows-2 gap-5 border-[3px] border-black">
                 {cardData.map((card, index) => (
-                    <Card key={index} imgurl={card.imgurl} name={card.name} price={card.price} position={card.position} />
+                    <Card
+                        key={index}
+                        imgurl={card.imgurl}
+                        name={card.name}
+                        price={card.price}
+                        position={card.position}
+                        onAddToMyTeam={() => addToMyTeam(card)}
+                    />
                 ))}
-            </main>
-            <div className="flex-1">
-                <MyTeam />
-            </div>
+            </section>
+
+            <section className="flex-1 grid grid-cols-4 grid-rows-2 gap-5 mx-2">
+                {myTeam.map((card, index) => (
+                    <Card
+                        key={index}
+                        imgurl={card.imgurl}
+                        name={card.name}
+                        price={card.price}
+                        position={card.position}
+                        onAddToMyTeam={() => deleteFromMyTeam(card)}
+                    />
+                ))}
+            </section>
         </div>
     )
 };

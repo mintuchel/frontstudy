@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const Hamburger = () => {
 
+    // setIsOpen을 호출하면 isOpen 값을 바꾸고 렌더링해라
     const [isOpen, setIsOpen] = useState(false);
 
     const handleHamburger = () => {
@@ -28,15 +29,14 @@ const Hamburger = () => {
                             <Link to="/" className="text-black" onClick={handleLinkClick}>Home</Link>
                         </li>
                         <li className="p-2 hover:bg-gray-200">
-                            <Link to="/players" className="text-black" onClick={handleLinkClick}>Players</Link>
-                        </li>
-                        <li className="p-2 hover:bg-gray-200">
                             <Link to="/login" className="text-black" onClick={handleLinkClick}>Login</Link>
                         </li>
                         <li className="p-2 hover:bg-gray-200">
                             <Link to="/signup" className="text-black" onClick={handleLinkClick}>SignUp</Link>
                         </li>
-
+                        <li className="p-2 hover:bg-gray-200">
+                            <Link to="/players" className="text-black" onClick={handleLinkClick}>Players</Link>
+                        </li>
                     </ul>
                 </div>
             )}
